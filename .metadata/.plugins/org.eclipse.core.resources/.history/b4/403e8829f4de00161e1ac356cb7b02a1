@@ -1,0 +1,13 @@
+package com.framework.test;
+
+public class JunitCoreMainClass {
+
+		public static void main(String[] args)
+		{
+			JUnitCore runner = new JUnitCore();
+			//Adding listener here
+			runner.addListener(new ExecutionListener());
+			runner.run(TestFeatureOne.class, TestFeatureTwo.class);
+		}
+	
+}

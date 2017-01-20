@@ -1,0 +1,14 @@
+@Test(expected=AirthmeticException.class) 
+This annotation expects method to throw Airthmetic exception & it passes when this exception occurs. 
+Test fails when the airtmentic exception doesnt occur. 
+
+Sequence of Junit method's call
+@BeforeClass-
+@Before 
+@test 
+@after
+@Before 
+@test
+@after 
+@AfterClass 
+

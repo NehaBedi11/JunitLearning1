@@ -1,0 +1,32 @@
+package com.framework.test;
+import java.lang.reflect.Array;
+import java.util.Collection;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+@RunWith(Parameterized.class)
+public class FirstTest {
+	
+	private String url;
+	public FirstTest(String furl){
+		url= furl;
+	}
+	
+	@Parameters
+	public static Collection<Object[]> getParameters(){
+		return Array.asList(new Object[][]{
+			{"https://google.co.in/"},
+			{"https://gmail.com/"}
+		});
+	}
+	@Test
+	public void FirstTest(){
+		WebDriver driver= new FirefoxDriver();
+		driver.get("https://google.co.in/");
+		System.out.println("Opened firfox & launched the search Engine");
+	}
+}

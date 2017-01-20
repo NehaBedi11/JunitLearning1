@@ -1,0 +1,11 @@
+package com.framework.test;
+import org.openqa.selenium.WebDriver;
+public class FirstTest {
+
+	public static void main(String[] args) {
+		WebDriver driver= new FirefoxDriver();
+		driver.get("https://google.co.in/");
+
+	}
+
+}

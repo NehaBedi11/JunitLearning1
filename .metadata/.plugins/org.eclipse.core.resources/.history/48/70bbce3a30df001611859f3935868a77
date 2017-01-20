@@ -1,0 +1,39 @@
+@Test(expected=AirthmeticException.class) 
+This annotation expects method to throw Airthmetic exception & it passes when this exception occurs. 
+Test fails when the airthmetic exception doesn't occur. 
+<--------------------------------->
+@Ignore
+@Test
+public void IgnoredTest(){sopln("hello");}
+This will not be executed
+
+<--------------------------------->
+
+Creating Suites :
+Use
+@RunWith(Suite.class)
+@Suite.SuiteClasses({FirstTest.class,SecondTest.class})
+For example: SuitTest.java
+<--------------------------------->
+Parameterised Tests:
+
+add @RunWith(Parameterized.class) 
+Create one parameterised constructor 
+create a static method  with @Parameters annotation having return type Collection<Object[][]>
+
+@Test Method will be executed depending upon the size of object[][]
+
+Example FirstTest.java
+SecondTest.java
+
+<--------------------------------->
+Sequence of Junit method's call
+@BeforeClass-
+@Before 
+@test 
+@after
+@Before 
+@test
+@after 
+@AfterClass 
+

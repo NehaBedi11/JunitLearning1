@@ -1,0 +1,15 @@
+package com.framework.test;
+
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.runner.notification.RunListener;
+
+public class RunnerClass {
+
+	public static void main(String[] args) throws Exception{
+		Result result=JUnitCore.runClasses(SuitTest.class);
+		System.out.println(result.getFailures().toString());
+		RunListener listener=result.createListener();
+		listener.testFailure(result.getFailures().get(0));
+	}
+}

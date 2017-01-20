@@ -1,0 +1,27 @@
+package com.framework.test;
+
+import static org.junit.Assert.*;
+
+import org.hamcrest.CoreMatchers;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class SketchTest {
+
+	WebDriver driver;
+	@Test
+	public void drawSquareTest() {
+		driver= new FirefoxDriver();
+		driver.get("https://sketch.io/sketchpad/");
+		driver.findElement(By.xpath("//span[@class='icon-close']")).click();
+		WebElement sketchSheet=driver.findElement(By.tagName("sketch-scrollarea"));
+		sketchSheet.click();
+		WebElement pencil =driver.findElement(By.xpath("//span[@data-tool='pencil']"));
+		assertThat(pencil.getAttribute("data-tooltip"),CoreMatchers.is("pencil"));
+		pencil.click();
+		
+	}
+}

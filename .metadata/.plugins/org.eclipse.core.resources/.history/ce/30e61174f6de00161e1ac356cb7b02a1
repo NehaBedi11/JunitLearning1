@@ -1,0 +1,20 @@
+1. Create a class implementing RunListener & override methods: for example JUnitExecutionListener.
+ 
+ 
+2.Create Custom Test Runner implementing BlockJUnit4ClassRunner & 
+override run(RunNotifier notifier) function: 
+Add the listener to the test execution of JUnit using 
+RunNotifier.addListener(object_of_listnerClass_Of_step1);
+super.run() is must as execution doesnt start without it
+For example : CustomerJunitRunner
+
+
+3.register our custom runner to test cases:
+Add 
+@RunWith(CustomerJunitRunner.class) in each test case file 
+
+or 
+(as there can be only one @RunWith Annotation)
+Use JUnitCore class for this 
+for Example : JunitCoreMainClass
+

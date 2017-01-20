@@ -1,0 +1,1 @@
+1. Create a class implementing RunListener & override methods: for example JUnitExecutionListener. 
