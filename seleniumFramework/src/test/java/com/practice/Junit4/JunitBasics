@@ -8,7 +8,9 @@ public void IgnoredTest(){sopln("hello");}
 This will not be executed
 
 <--------------------------------->
-
+// timeout is given in milliseconds
+	@Test(timeout = 1000)
+<--------------------------------->
 Creating Suites :
 Use
 @RunWith(Suite.class)
@@ -39,3 +41,12 @@ Sequence of Junit method's call
 <--------------------------------->
 this can be used to operate on test results of execution : 
 Result result=JunitCore.run(classNames);
+Example main(String[]args) {} of ErrorCollectorExample.java
+<--------------------------------->
+ASSERTIONS : 
+AssertionExampleTest in FirstTest.java
+<----------------------------------->
+ErrorCollectorExample.java
+Saving errors in ErrorCollector & re-suing it later for generating custom reports. 
+
+
